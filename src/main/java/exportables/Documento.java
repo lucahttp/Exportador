@@ -51,7 +51,8 @@ public class Documento implements Exportable {
         //return this.datos.values()[1];
         //return  this.datos.get(datos.keySet().toArray()[0]);
 
-        return datos.keySet().toArray()[0];
+        //return datos.get(datos.keySet().toArray()[0]);
+        return  this.datos.keySet().stream().findFirst().get();
         //return datos.get();
     }
 
@@ -60,7 +61,7 @@ public class Documento implements Exportable {
         //this.datos.put(clave, new ArrayList<String>());
         //List<String> values = new List<(this.datos.values())>;
         //return this.datos.values()[1];
-        return  this.datos.get(datos.keySet().toArray()[0]);
+        return this.datos.get(datos.keySet().toArray()[0]);
         /*
         return datos.keySet().stream()
                 .map((key) -> key + ": " + datos.get(key))

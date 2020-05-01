@@ -11,10 +11,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.Date;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
+
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 ///
@@ -31,7 +29,7 @@ public class ExportarAExcel implements EstrategiaDeExportacion {
         //return null;
         HSSFWorkbook workbook = new HSSFWorkbook();
         HSSFSheet sheet = workbook.createSheet("Sample sheet");
-
+        /*
         Map<String, Object[]> data = new LinkedHashMap<String, Object[]>();
         data.put("1", new Object[]{"Year", "WinnerCountryName", "LosserCountryName","By"});
         data.put("2", new Object[]{"1975", "WestInddies", "Australia","17 Run"});
@@ -46,10 +44,25 @@ public class ExportarAExcel implements EstrategiaDeExportacion {
         data.put("123123", new Object[]{"2011", "India", "Srilanka","6 Wicket"});
         data.put("12124", new Object[]{"2015", "Australia", "New Zeland","7 Wicket"});
         Set<String> keyset = data.keySet();
+
+         */
+        Set<String> keyset = exportable.datos().keySet();
         int rownum = 0;
         for (String key : keyset) {
             Row row = sheet.createRow(rownum++);
-            Object[] objArr = data.get(key);
+
+            ArrayList<String> elements = new ArrayList<String>();
+            elements.add(key);
+            for (Object gg : exportable.datos().get(key).toArray()) {
+                elements.add((String) gg);
+            }
+
+            //objArr = (Object[][]) exportable.datos().get(key).toArray();
+
+            Object[] objArr = elements.toArray();
+
+            //objArr = (Object[][]) exportable.datos().get(key).toArray();
+            //Object[] objArr = exportable.datos().get(key).toArray();
             int cellnum = 0;
             for (Object obj : objArr) {
                 Cell cell = row.createCell(cellnum++);
