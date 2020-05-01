@@ -14,10 +14,12 @@ public class exportarTest1 {
 		//assertTrue("Num 1 is greater than Num 2", tester.isGreater(2, 3));
 		Documento testdoc = new Documento();
 		testdoc.agregarDato("luca","pollo","gato","papas fritas");
+		System.out.println(testdoc.getData());
+		System.out.println(testdoc.getDoc());
 		Exportador aExcel = new Exportador();
-		aExcel.setExportable(testdoc);
-		aExcel.cambiarEstrategia(new ExportarAExcel());
-		aExcel.exportar();
+		//aExcel.setExportable(testdoc);
+		//aExcel.cambiarEstrategia(new ExportarAExcel());
+		//aExcel.exportar();
 	}
 
 }

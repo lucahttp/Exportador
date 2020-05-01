@@ -31,6 +31,7 @@ public class ExportarAExcel implements EstrategiaDeExportacion {
         //return null;
         HSSFWorkbook workbook = new HSSFWorkbook();
         HSSFSheet sheet = workbook.createSheet("Sample sheet");
+
         Map<String, Object[]> data = new LinkedHashMap<String, Object[]>();
         data.put("1", new Object[]{"Year", "WinnerCountryName", "LosserCountryName","By"});
         data.put("2", new Object[]{"1975", "WestInddies", "Australia","17 Run"});
