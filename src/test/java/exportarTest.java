@@ -8,7 +8,7 @@ import org.junit.Test;
 
 import java.io.IOException;
 
-public class exportarTestPdf2 {
+public class exportarTest {
 
 	@Test
 	public void Test() throws IOException {
@@ -17,7 +17,7 @@ public class exportarTestPdf2 {
 		//assertTrue("Num 1 is greater than Num 2", tester.isGreater(2, 3));
 		Documento testdoc = new Documento();
 		testdoc.agregarDato("luca","pollo","gato","papas fritas");
-		testdoc.agregarDato("robert","toro","perro","papas fritas con cheddar");
+		testdoc.agregarDato("robert","toro","perro","cheddar");
 		//System.out.println("getData");
 		//System.out.println(testdoc.getData());
 		//System.out.println("getDoc");
