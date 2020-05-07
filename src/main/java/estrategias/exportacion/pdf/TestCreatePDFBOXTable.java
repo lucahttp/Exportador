@@ -9,12 +9,6 @@ import org.apache.pdfbox.pdmodel.font.PDType1Font;
 import java.io.IOException;
 
 
-//import org.apache.pdfbox.pdmodel.edit.PDPageContentStream;
-
-/**
- *
- * @author Bharathi Raja
- */
 public class TestCreatePDFBOXTable {
     public static void main(String[] args) {
         try {
